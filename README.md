@@ -1168,6 +1168,9 @@ kubectl get ingress
 # NAME            CLASS   HOSTS   ADDRESS   PORTS   AGE
 # hello-ingress   nginx   *                 80      16s
 
+#如果你没有使用minikube，你可以通过如下命令找到ingress暴露的外部IP
+kubectl get services --all-namespaces | grep ingress
+
 # replace 192.168.59.100 by your minikube ip
 curl http://192.168.59.100/hello
 # [v3] Hello, Kubernetes!, From host: hellok8s-deployment-5d5545b69c-sn7mn
